@@ -9,6 +9,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 /**
  * Practice: get a URL and slap it on the screen - network calls!!
  */
@@ -45,8 +50,14 @@ public class Utility {
         return url;
     }
 
-    //Open connection and grab the json
+    /**
+     * Use the conventional HttpURLConnection methodology to get data from an http connection
+     * @param url
+     * @return
+     * @throws IOException
+     */
     public static String getResponseFromHttp(URL url) throws IOException {
+
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
             InputStream in = urlConnection.getInputStream();
@@ -63,6 +74,23 @@ public class Utility {
         } finally {
             urlConnection.disconnect();
         }
+    }
+
+    /**
+     * Use OkHttpClient to get data from an http connection
+     *
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public static String getResponseFromOkHttp(URL url) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder().url(url.toString()).build();
+
+        Response response = client.newCall(request).execute();
+
+        return "changed text" + response.body().string();
     }
 
 }

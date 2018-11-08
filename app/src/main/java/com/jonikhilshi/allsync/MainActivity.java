@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             String searchResponse = null;
 
             try {
-                searchResponse = Utility.getResponseFromHttp(searchUrl);
+                searchResponse = Utility.getResponseFromOkHttp(searchUrl);
             } catch (IOException e) {
                 e.printStackTrace();
             }

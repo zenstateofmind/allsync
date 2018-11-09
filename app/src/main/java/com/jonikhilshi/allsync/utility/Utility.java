@@ -10,17 +10,20 @@ import java.net.URL;
 import java.util.Scanner;
 
 import okhttp3.Call;
+import okhttp3.Headers;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
+import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
 /**
  * Practice: get a URL and slap it on the screen - network calls!!
  */
 public class Utility {
 
-    final static String GITHUB_BASE_URL =
-            "https://api.github.com/search/repositories";
+    final static String TWITTER_BASE_URL =
+            "https://api.twitter.com/1.1/lists/statuses.json";
 
     final static String PARAM_QUERY = "q";
 
@@ -31,12 +34,15 @@ public class Utility {
     final static String PARAM_SORT = "sort";
     final static String sortBy = "stars";
 
+    final static String SLUG_QUERY = "slug";
+    final static String OWNER_SCREEN_NAME = "owner_screen_name";
+
     //Create the URL
     public static URL createHttpUrl(String githubSearchQuery) {
 
-        Uri builtUri = Uri.parse(GITHUB_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_QUERY, githubSearchQuery)
-                .appendQueryParameter(PARAM_SORT, sortBy)
+        Uri builtUri = Uri.parse(TWITTER_BASE_URL).buildUpon()
+                .appendQueryParameter(SLUG_QUERY, "product-management")
+                .appendQueryParameter(OWNER_SCREEN_NAME, "allsync1")
                 .build();
 
         URL url = null;
@@ -84,10 +90,14 @@ public class Utility {
      * @throws IOException
      */
     public static String getResponseFromOkHttp(URL url) throws IOException {
-        OkHttpClient client = new OkHttpClient();
+
+
+        OkHttpOAuthConsumer oauthHeader = new OkHttpOAuthConsumer("",
+                "");
+
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new SigningInterceptor(oauthHeader)).build();
 
         Request request = new Request.Builder().url(url.toString()).build();
-
         Response response = client.newCall(request).execute();
 
         return "changed text" + response.body().string();

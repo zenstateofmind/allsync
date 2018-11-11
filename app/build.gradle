@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -28,4 +32,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
     implementation 'oauth.signpost:signpost-core:1.2.1.2'
+    implementation('com.twitter.sdk.android:twitter:3.3.0@aar') {
+        transitive = true
+    }
 }

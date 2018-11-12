@@ -20,8 +20,10 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
+/**
+ * Starting class - allow sign in
+ */
 public class LoginActivity extends AppCompatActivity {
-
 
     private TwitterLoginButton loginButton = null;
     private static final String TAG = LoginActivity.class.getSimpleName();
@@ -30,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // Setting up twitter config
         TwitterConfig config = new TwitterConfig.Builder(this)
                 .logger(new DefaultLogger(Log.DEBUG))
                 .debug(true)
@@ -49,8 +51,12 @@ public class LoginActivity extends AppCompatActivity {
                 TwitterAuthToken authToken = session.getAuthToken();
                 String token = authToken.token;
                 String secret = authToken.secret;
+
                 Log.i(TAG, "Login completed successfully!! token: " + token + " secret: " + secret);
-//                Toast.makeText(getApplicationContext(), "token: " + token + " secret: " + secret, Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "token: " + token + " secret: " + secret, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(), ListTimelineActivity.class);
+                startActivity(intent);
             }
 
             @Override

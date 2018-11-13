@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i(TAG, "Login completed successfully!! token: " + token + " secret: " + secret);
                 Toast.makeText(getApplicationContext(), "token: " + token + " secret: " + secret, Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(getApplicationContext(), ListTimelineActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DisplayListActivity.class);
                 startActivity(intent);
             }
 

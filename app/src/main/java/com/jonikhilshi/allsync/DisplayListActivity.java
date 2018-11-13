@@ -8,14 +8,21 @@ import android.view.View;
 
 public class DisplayListActivity extends AppCompatActivity {
 
+    private RecyclerView twitterListsRView;
+    private TwitterListsAdapter twitterListsAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_list);
 
-        RecyclerView twitterListsRView = findViewById(R.id.twitter_lists);
-        twitterListsRView.setLayoutManager(new LinearLayoutManager(this));
+        twitterListsAdapter = new TwitterListsAdapter(this);
 
+        twitterListsRView = findViewById(R.id.twitter_lists);
+        twitterListsRView.setAdapter(twitterListsAdapter);
+        twitterListsRView.setHasFixedSize(true);
+        twitterListsRView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 }

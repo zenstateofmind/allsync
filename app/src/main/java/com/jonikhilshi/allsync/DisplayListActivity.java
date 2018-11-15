@@ -6,6 +6,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterApiClient;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.internal.TwitterApi;
+
 public class DisplayListActivity extends AppCompatActivity {
 
     private RecyclerView twitterListsRView;
@@ -24,5 +29,6 @@ public class DisplayListActivity extends AppCompatActivity {
         twitterListsRView.setHasFixedSize(true);
         twitterListsRView.setLayoutManager(new LinearLayoutManager(this));
 
+        // Need to push something in to make sure that I don't lose the habit
     }
 }

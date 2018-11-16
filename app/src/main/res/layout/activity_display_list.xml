@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayListActivity">
+    tools:context=".UI.DisplayListActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/twitter_lists"

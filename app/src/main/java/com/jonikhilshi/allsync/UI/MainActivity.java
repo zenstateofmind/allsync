@@ -1,13 +1,12 @@
-package com.jonikhilshi.allsync;
+package com.jonikhilshi.allsync.UI;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.jonikhilshi.allsync.utility.Utility;
-
-import org.w3c.dom.Text;
+import com.jonikhilshi.allsync.R;
+import com.jonikhilshi.allsync.Network.Utility;
 
 import java.io.IOException;
 import java.net.URL;

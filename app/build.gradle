@@ -36,5 +36,5 @@ dependencies {
         transitive = true
     }
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
 }

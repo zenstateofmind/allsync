@@ -1,10 +1,11 @@
-package com.jonikhilshi.allsync;
+package com.jonikhilshi.allsync.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.jonikhilshi.allsync.R;
 import com.twitter.sdk.android.tweetui.TweetTimelineRecyclerViewAdapter;
 import com.twitter.sdk.android.tweetui.TwitterListTimeline;
 

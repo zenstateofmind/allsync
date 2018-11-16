@@ -1,4 +1,4 @@
-package com.jonikhilshi.allsync.utility;
+package com.jonikhilshi.allsync.Network;
 
 import android.net.Uri;
 

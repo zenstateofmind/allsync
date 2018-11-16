@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.jonikhilshi.allsync.UI.ListTimelineActivity;
+
 public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapter.TwitterListViewHolder> {
 
     private Context mContext;

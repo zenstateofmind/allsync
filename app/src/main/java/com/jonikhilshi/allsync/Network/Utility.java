@@ -25,6 +25,8 @@ public class Utility {
     final static String TWITTER_BASE_URL =
             "https://api.twitter.com/1.1/lists/statuses.json";
 
+    public static final String LIST_SCREEN_NAME = "allsync1";
+
     final static String PARAM_QUERY = "q";
 
     /*

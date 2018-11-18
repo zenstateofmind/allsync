@@ -26,6 +26,7 @@ public class Utility {
             "https://api.twitter.com/1.1/lists/statuses.json";
 
     public static final String LIST_SCREEN_NAME = "allsync1";
+    public static final String SLUG_NAME_TAG = "slug_id";
 
     final static String PARAM_QUERY = "q";
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.jonikhilshi.allsync.Network.Utility;
 import com.jonikhilshi.allsync.UI.ListTimelineActivity;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapte
     public void onBindViewHolder(TwitterListViewHolder twitterListsViewHolder, int position) {
         if(twitterLists != null && twitterLists.size() > position) {
             TwitterListInfo twitterListInfo = twitterLists.get(position);
-            twitterListsViewHolder.bindView(twitterListInfo.name);
+            twitterListsViewHolder.bindInfo(twitterListInfo);
         }
 
     }
@@ -64,6 +65,7 @@ public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapte
     public class TwitterListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView twitterListItemName;
+        private TwitterListInfo twitterListInfo;
 
         public TwitterListViewHolder(View twitterListItem) {
             super(twitterListItem);
@@ -73,12 +75,16 @@ public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapte
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, ListTimelineActivity.class);
-            mContext.startActivity(intent);
+            if (twitterListInfo != null) {
+                Intent intent = new Intent(mContext, ListTimelineActivity.class);
+                intent.putExtra(Utility.SLUG_NAME_TAG, twitterListInfo.slug);
+                mContext.startActivity(intent);
+            }
         }
 
-        public void bindView(String listName) {
-            twitterListItemName.setText(listName);
+        public void bindInfo(TwitterListInfo twitterListInfo) {
+            this.twitterListInfo = twitterListInfo;
+            twitterListItemName.setText(twitterListInfo.name);
         }
     }
 }

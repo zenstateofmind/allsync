@@ -7,15 +7,9 @@
     android:orientation="vertical"
     tools:context=".UI.DisplayListActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Topics"
-        android:layout_marginBottom="20dp"
-        android:textSize="20dp"/>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/twitter_lists"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" />

@@ -41,7 +41,5 @@ public class DisplayListActivity extends AppCompatActivity {
 
         twitterApi.getListOfTwitterList(twitterListsAdapter, Utility.LIST_SCREEN_NAME);
 
-
-
     }
 }

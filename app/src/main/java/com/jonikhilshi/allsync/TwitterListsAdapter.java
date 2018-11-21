@@ -32,6 +32,9 @@ public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapte
                 R.layout.twitter_list_item, parent, false
         );
 
+        int height = parent.getMeasuredHeight()/4;
+        twitterListItem.setMinimumHeight(height);
+
         TwitterListViewHolder twitterListViewHolder = new TwitterListViewHolder(twitterListItem);
 
         return twitterListViewHolder;

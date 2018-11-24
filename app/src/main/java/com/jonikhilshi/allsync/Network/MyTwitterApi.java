@@ -14,7 +14,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Test Comment
+ * Implementation of the twitter list service and client. Class where the actual lists are retrieved
  */
 public class MyTwitterApi {
 

@@ -8,6 +8,9 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+/**
+ * Retrofit class to retrieve lists
+ */
 public interface TwitterListsService {
 
     @GET("/1.1/lists/list.json")

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 
 import com.jonikhilshi.allsync.Network.Utility;
 import com.jonikhilshi.allsync.R;
@@ -18,6 +19,7 @@ public class ListTimelineActivity extends AppCompatActivity {
 
         final String listName = getIntent().getStringExtra(Utility.LIST_NAME);
         getSupportActionBar().setTitle(listName);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setContentView(R.layout.activity_list_timeline);
 
@@ -37,6 +39,15 @@ public class ListTimelineActivity extends AppCompatActivity {
 
         listTimelineRecyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

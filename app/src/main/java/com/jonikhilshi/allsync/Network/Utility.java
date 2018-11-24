@@ -18,7 +18,7 @@ import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
 import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
 /**
- * Practice: get a URL and slap it on the screen - network calls!!
+ * Capturing all the constants
  */
 public class Utility {
 

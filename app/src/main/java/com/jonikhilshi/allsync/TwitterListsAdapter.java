@@ -15,6 +15,10 @@ import com.jonikhilshi.allsync.UI.ListTimelineActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the adapter that captures the list of TwitterListInfo and goes through them to surface
+ * on a recycler view
+ */
 public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapter.TwitterListViewHolder> {
 
     public final static String LOG_TAG = TwitterListsAdapter.class.getSimpleName();

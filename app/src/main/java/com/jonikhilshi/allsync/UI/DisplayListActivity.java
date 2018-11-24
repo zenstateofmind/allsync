@@ -1,5 +1,6 @@
 package com.jonikhilshi.allsync.UI;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -43,6 +44,13 @@ public class DisplayListActivity extends AppCompatActivity {
         twitterListsRView.setLayoutManager(new GridLayoutManager(this, 3));
 
         twitterApi.getListOfTwitterList(twitterListsAdapter, Utility.LIST_SCREEN_NAME);
+    }
 
+    @Override
+    public void onBackPressed() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
     }
 }

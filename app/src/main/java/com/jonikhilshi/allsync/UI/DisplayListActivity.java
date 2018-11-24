@@ -29,6 +29,9 @@ public class DisplayListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setTitle(R.string.spaces);
+
         setContentView(R.layout.activity_display_list);
 
         twitterListsAdapter = new TwitterListsAdapter(this);

@@ -22,6 +22,7 @@ import se.akerfeldt.okhttp.signpost.SigningInterceptor;
  */
 public class Utility {
 
+    public static final String LIST_NAME = "list_name";
     final static String TWITTER_BASE_URL =
             "https://api.twitter.com/1.1/lists/statuses.json";
 

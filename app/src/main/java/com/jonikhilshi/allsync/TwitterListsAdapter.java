@@ -81,6 +81,7 @@ public class TwitterListsAdapter extends RecyclerView.Adapter<TwitterListsAdapte
             if (twitterListInfo != null) {
                 Intent intent = new Intent(mContext, ListTimelineActivity.class);
                 intent.putExtra(Utility.SLUG_NAME_TAG, twitterListInfo.slug);
+                intent.putExtra(Utility.LIST_NAME, twitterListInfo.name);
                 mContext.startActivity(intent);
             }
         }

@@ -15,6 +15,10 @@ public class ListTimelineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final String listName = getIntent().getStringExtra(Utility.LIST_NAME);
+        getSupportActionBar().setTitle(listName);
+
         setContentView(R.layout.activity_list_timeline);
 
         final RecyclerView listTimelineRecyclerView = findViewById(R.id.list_timeline_recycler_view);

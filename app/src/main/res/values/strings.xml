@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">allsync</string>
     <string name="spaces">Spaces</string>
+    <string name="logout">Logout</string>
+    <string name="verify_user_wants_to_logout">Are you sure you want to logout?</string>
+    <string name="ok">OK</string>
 </resources>
